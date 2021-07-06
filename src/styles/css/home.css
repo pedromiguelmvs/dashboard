@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter";
+}
+
+.grid-container {
+  display: grid;
+  grid-template-areas: "sidebar dashboard profile blank";
+  grid-template-columns: 100px auto 300px 50px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  width: 100%;
+  height: 100vh;
+  background: #ececf6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.sidebar .selected-link {
+  display: flex;
+  flex-direction: none;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 100px;
+  padding: 10px 0px;
+  color: #000;
+  transition: 0.2s;
+  border-right: 2px solid #000;
+}
+.sidebar .selected-link:hover {
+  background-color: #fff;
+}
+
+.dashboard {
+  grid-area: dashboard;
+  background: #f5f5fd;
+  padding: 60px;
+}
+.dashboard .header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: none;
+}
+.dashboard .header div {
+  width: 100%;
+}
+.dashboard .header div h3 {
+  font-size: 26px;
+  font-weight: bold;
+}
+.dashboard .header div h5 {
+  font-size: 16px;
+  font-weight: 200;
+}
+.dashboard .header .searchbar {
+  width: 100%;
+  display: flex;
+  flex-direction: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+.dashboard .header .searchbar img {
+  background: #ffffff;
+  border-radius: 25px 0px 0px 25px;
+  padding: 10px;
+  transform: translateX(10px);
+}
+.dashboard .header .searchbar input {
+  border: none;
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 0px 25px 25px 0px;
+  outline: none;
+}
+
+.profile {
+  grid-area: profile;
+  width: 100%;
+  background: #ececf6;
+}
+
+.blank {
+  grid-area: blank;
+  width: 100%;
+  background: #f5f5fd;
+}
+
+/*# sourceMappingURL=home.css.map */

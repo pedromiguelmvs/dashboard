@@ -1,0 +1,111 @@
+$link-textcolor: #000;
+$sidebar-color: #ececf6;
+$dashboard-color: #f5f5fd;
+$profile-color: #ececf6;
+$blank-color: #f5f5fd;
+$searchbar-color: #ffffff;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter';
+}
+
+@mixin flex-align($vertical, $horizontal, $direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $vertical;
+    justify-content: $horizontal;
+}
+
+.grid-container {
+    display: grid;
+
+    grid-template-areas: 
+    "sidebar dashboard profile blank";
+
+    grid-template-columns: 100px auto 300px 50px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    width: 100%;
+    height: 100vh;
+    background: $sidebar-color;
+
+    @include flex-align(center, center, column);
+
+    .selected-link {
+        @include flex-align(center, center, none);
+        text-decoration: none;
+        width: 100px;
+        padding: 10px 0px;
+        color: $link-textcolor;
+        transition: .2s;
+        
+        border-right: 2px solid #000;
+        &:hover {
+            background-color: #fff;
+        }
+    }
+
+}
+
+.dashboard {
+    grid-area: dashboard;
+    background: $dashboard-color;
+    padding: 60px;
+
+    .header {
+        @include flex-align(center, none, row);
+
+        div {
+            width: 100%;
+
+            h3 {
+                font-size: 26px;
+                font-weight: bold;
+            }
+
+            h5 {
+                font-size: 16px;
+                font-weight: 200;
+            }
+        }
+        
+        .searchbar {
+            width: 100%;
+            @include flex-align(center, flex-end, none);
+
+            img {
+                background: $searchbar-color;
+                border-radius: 25px 0px 0px 25px;
+                padding: 10px;
+                transform: translateX(10px);
+            }
+            
+            input {
+                border: none;
+                width: 100%;
+                padding: 12px;
+                background: $searchbar-color;
+                border-radius: 0px 25px 25px 0px;
+                outline: none;
+            }
+        }
+    }
+
+}
+
+.profile {
+    grid-area: profile;
+    width: 100%;
+    background: $profile-color;
+}
+
+.blank {
+    grid-area: blank;
+    width: 100%;
+    background: $blank-color;
+}
