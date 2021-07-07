@@ -4,12 +4,14 @@ $dashboard-color: #f5f5fd;
 $profile-color: #ececf6;
 $blank-color: #f5f5fd;
 $searchbar-color: #ffffff;
+$card-color: #ffffff;
+$card-subtitle-color: #bcbcbc;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter';
+    font-family: 'Inter', sans-serif;
 }
 
 @mixin flex-align($vertical, $horizontal, $direction) {
@@ -54,11 +56,13 @@ $searchbar-color: #ffffff;
 
 .dashboard {
     grid-area: dashboard;
+    height: auto;
     background: $dashboard-color;
     padding: 60px;
 
     .header {
         @include flex-align(center, none, row);
+        margin-bottom: 60px;
 
         div {
             width: 100%;
@@ -95,6 +99,39 @@ $searchbar-color: #ffffff;
             }
         }
     }
+
+    .cards {
+        display: grid;
+        gap: 25px;
+        grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+        
+        .card {
+            width: 180px;
+            height: 180px;
+            padding: 15px 25px;
+            background: $card-color;
+            border-radius: 25px;
+            box-shadow: 3px 5px 25px #00000025;
+            @include flex-align(none, space-between, column);
+            gap: 15px;
+            cursor: pointer;
+            transition: .2s;
+    
+            p {
+                width: 100px;
+                color: $card-subtitle-color;
+            }
+    
+            h5 {
+                font-size: 20px;
+            }
+    
+            &:hover {
+                transform: translateY(-20px);
+            }
+        }
+    }
+
 
 }
 

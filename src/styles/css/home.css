@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter";
+  font-family: "Inter", sans-serif;
 }
 
 .grid-container {
@@ -39,6 +39,7 @@
 
 .dashboard {
   grid-area: dashboard;
+  height: auto;
   background: #f5f5fd;
   padding: 60px;
 }
@@ -47,6 +48,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: none;
+  margin-bottom: 60px;
 }
 .dashboard .header div {
   width: 100%;
@@ -79,6 +81,36 @@
   background: #ffffff;
   border-radius: 0px 25px 25px 0px;
   outline: none;
+}
+.dashboard .cards {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+}
+.dashboard .cards .card {
+  width: 180px;
+  height: 180px;
+  padding: 15px 25px;
+  background: #ffffff;
+  border-radius: 25px;
+  box-shadow: 3px 5px 25px #00000025;
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: space-between;
+  gap: 15px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.dashboard .cards .card p {
+  width: 100px;
+  color: #bcbcbc;
+}
+.dashboard .cards .card h5 {
+  font-size: 20px;
+}
+.dashboard .cards .card:hover {
+  transform: translateY(-20px);
 }
 
 .profile {

@@ -1,6 +1,7 @@
 import '../styles/css/home.css';
 
 import Header from '../components/Header';
+import Card from '../components/Card';
 
 const Home = () => {
     return (
@@ -18,6 +19,32 @@ const Home = () => {
                     title="Dashboard"
                     subtitle="Payments updates"
                 />
+                <div className="cards">
+                    <Card
+                        src="https://pics.freeicons.io/uploads/icons/png/14457147931535797976-48.png"
+                        alt="card"
+                        subtitle="Transfer via Card number"
+                        value="1200"
+                    />
+                    <Card
+                        src="https://image.flaticon.com/icons/png/32/159/159791.png"
+                        alt="card"
+                        subtitle="Transfer Other Banks"
+                        value="150"
+                    />
+                    <Card
+                        src="https://image.flaticon.com/icons/png/32/3635/3635987.png"
+                        alt="card"
+                        subtitle="Transfer Same Bank"
+                        value="1500"
+                    />
+                    <Card
+                        src="https://image.flaticon.com/icons/png/32/3029/3029336.png"
+                        alt="card"
+                        subtitle="Transfer to Other Bank"
+                        value="1500"
+                    />
+                </div>
             </section>
             <section className="profile">
 
