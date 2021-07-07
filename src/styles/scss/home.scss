@@ -55,6 +55,59 @@ $header-subtitle-color: #858585;
 
 }
 
+.header {
+    @include flex-align(center, none, row);
+
+    p {
+        text-transform: uppercase;
+        font-weight: 200;
+        letter-spacing: 2px;
+        width: 200px;
+        color: $header-subtitle-color;
+    }
+
+    div {
+        width: 100%;
+
+        h3 {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        h5 {
+            font-size: 16px;
+            font-weight: 200;
+            color: $header-subtitle-color;
+        }
+    }
+    
+    .searchbar {
+        width: 100%;
+        @include flex-align(center, flex-end, none);
+
+        img {
+            background: $searchbar-color;
+            border-radius: 25px 0px 0px 25px;
+            padding: 12px;
+            transform: translateX(10px);
+        }
+        
+        input {
+            border: none;
+            width: 100%;
+            padding: 12px;
+            background: $searchbar-color;
+            border-radius: 0px 25px 25px 0px;
+            outline: none;
+            font-size: 16px;
+
+            &::placeholder {
+                font-weight: 300;
+            }
+        }
+    }
+}
+
 .dashboard {
     grid-area: dashboard;
     height: auto;
@@ -62,60 +115,6 @@ $header-subtitle-color: #858585;
     padding: 60px;
     @include flex-align(none, none, column);
     gap: 40px;
-
-
-    .header {
-        @include flex-align(center, none, row);
-
-        p {
-            text-transform: uppercase;
-            font-weight: 200;
-            letter-spacing: 2px;
-            width: 200px;
-            color: $header-subtitle-color;
-        }
-
-        div {
-            width: 100%;
-
-            h3 {
-                font-size: 26px;
-                font-weight: bold;
-            }
-
-            h5 {
-                font-size: 16px;
-                font-weight: 200;
-                color: $header-subtitle-color;
-            }
-        }
-        
-        .searchbar {
-            width: 100%;
-            @include flex-align(center, flex-end, none);
-
-            img {
-                background: $searchbar-color;
-                border-radius: 25px 0px 0px 25px;
-                padding: 12px;
-                transform: translateX(10px);
-            }
-            
-            input {
-                border: none;
-                width: 100%;
-                padding: 12px;
-                background: $searchbar-color;
-                border-radius: 0px 25px 25px 0px;
-                outline: none;
-                font-size: 16px;
-
-                &::placeholder {
-                    font-weight: 300;
-                }
-            }
-        }
-    }
 
     .cards {
         display: grid;
@@ -152,11 +151,12 @@ $header-subtitle-color: #858585;
     .graphic-container {
         @include flex-align(none, none, column);
         gap: 40px;
+        
         .graphic {
             display: grid;
             grid-template-areas: 
-            "payments rows rows";
-            grid-template-columns: 80px auto auto;
+            "payments rows";
+            grid-template-columns: 80px auto;
 
             .payments-col {
                 @include flex-align(center, none, column);
@@ -169,6 +169,9 @@ $header-subtitle-color: #858585;
                 @include flex-align(center, none, row);
                 grid-area: rows;
                 gap: 35px;
+                overflow-y: hidden;
+                overflow-x: scroll;
+                padding: 20px;
 
                 td {
                     height: 100%;
@@ -235,6 +238,82 @@ $header-subtitle-color: #858585;
     grid-area: profile;
     width: 100%;
     background: $profile-color;
+    padding: 40px;
+    @include flex-align(none, none, column);
+    gap: 20px;
+
+    .profile-header {
+        width: 100%;
+        @include flex-align(center, flex-end, row);
+        gap: 25px;
+        .profile-pic {
+            border-radius: 50%;
+            width: 40px;
+            cursor: pointer;
+            border: 3px solid #fff;
+        }
+        img {
+            cursor: pointer;
+            width: 20px;
+        }
+    }
+
+    .header {
+        div {
+            h3 {
+                width: 100%;
+                font-size: 18px;
+            }
+
+            h5 {
+                font-size: 14px;
+            }
+        }
+    }
+
+    .recent-activities {
+        width: 100%;
+        @include flex-align(none, none, column);
+        gap: 20px;
+    }
+
+    .upcoming-payments {
+        width: 100%;
+        @include flex-align(none, none, column);
+        gap: 20px;
+    }
+
+    .activity-container {
+        @include flex-align(center, none, row);
+        width: 100%;
+        gap: 10px;
+
+        .img-container {
+            @include flex-align(center, center, none);
+            padding: 10px;
+            background: #fff;
+            border-radius: 15px;
+        }
+
+        .activity-content {
+            width: 100%;
+            h5 {
+                width: auto;
+                font-size: 16px;
+            }
+
+            p {
+                font-size: 12px;
+                color: $card-subtitle-color;
+            }
+        }
+
+        .activity-value {
+            width: 100%;
+            @include flex-align(center, flex-end, none);
+            font-weight: bold;
+        }
+    }
 }
 
 .blank {

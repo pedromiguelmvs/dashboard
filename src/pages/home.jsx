@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Card from '../components/Card';
 import Graphic from '../components/Graphic';
 import Transition from '../components/Transition';
+import Activity from '../components/Activity';
 
 const Home = () => {
     return (
@@ -83,11 +84,78 @@ const Home = () => {
                 </div>
             </section>
             <section className="profile">
-
+                <div className="profile-header">
+                    <img
+                        src="https://pics.freeicons.io/uploads/icons/png/8938216821547546487-24.png"
+                        alt="calendar"
+                    />
+                    <img
+                        className="header-item"
+                        src="https://pics.freeicons.io/uploads/icons/png/8732145451555937113-24.png"
+                        alt="notifications"
+                    />
+                    <img
+                        className="profile-pic"
+                        src="https://thispersondoesnotexist.com/image"
+                        alt="profilepic"
+                    />
+                </div>
+                <div className="recent-activities">
+                    <Header
+                        title="Recent Activities"
+                        subtitle="02 Mar 2021"
+                    />
+                    <Activity
+                        src="https://pics.freeicons.io/uploads/icons/png/12640594921596027195-24.png"
+                        alt="water"
+                        title="Water Bill"
+                        subtitle="Successfully"
+                        value="120"
+                    />
+                    <Activity
+                        src="https://pics.freeicons.io/uploads/icons/png/15886967051535797986-24.png"
+                        alt="salary"
+                        title="Income Salary"
+                        subtitle="Received"
+                        value="4500"
+                    />
+                    <Activity
+                        src="https://pics.freeicons.io/uploads/icons/png/1033471011586787980-24.png"
+                        alt="electric"
+                        title="Electric Bill"
+                        subtitle="Successfully"
+                        value="150"
+                    />
+                    <Activity
+                        src="https://pics.freeicons.io/uploads/icons/png/2458403001543238954-24.png"
+                        alt="wifi"
+                        title="Internet Bill"
+                        subtitle="Successfully"
+                        value="50"
+                    />
+                </div>
+                <div className="upcoming-payments">
+                    <Header
+                        title="Upcoming Payments"
+                        subtitle="13 Mar 2021"
+                    />
+                    <Activity
+                        src="https://pics.freeicons.io/uploads/icons/png/3581263791586787809-24.png"
+                        alt="home"
+                        title="Home Rent"
+                        subtitle="Pending"
+                        value="1500"
+                    />
+                    <Activity
+                        src="https://pics.freeicons.io/uploads/icons/png/10320105721596026964-24.png"
+                        alt="car"
+                        title="Car Insurance"
+                        subtitle="Pending"
+                        value="150"
+                    />
+                </div>
             </section>
-            <section className="blank">
-
-            </section>
+            <section className="blank"></section>
         </div>
     );
 }

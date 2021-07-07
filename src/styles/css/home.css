@@ -37,6 +37,57 @@
   background-color: #fff;
 }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: none;
+}
+.header p {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 2px;
+  width: 200px;
+  color: #858585;
+}
+.header div {
+  width: 100%;
+}
+.header div h3 {
+  font-size: 26px;
+  font-weight: bold;
+}
+.header div h5 {
+  font-size: 16px;
+  font-weight: 200;
+  color: #858585;
+}
+.header .searchbar {
+  width: 100%;
+  display: flex;
+  flex-direction: none;
+  align-items: center;
+  justify-content: flex-end;
+}
+.header .searchbar img {
+  background: #ffffff;
+  border-radius: 25px 0px 0px 25px;
+  padding: 12px;
+  transform: translateX(10px);
+}
+.header .searchbar input {
+  border: none;
+  width: 100%;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 0px 25px 25px 0px;
+  outline: none;
+  font-size: 16px;
+}
+.header .searchbar input::placeholder {
+  font-weight: 300;
+}
+
 .dashboard {
   grid-area: dashboard;
   height: auto;
@@ -47,56 +98,6 @@
   align-items: none;
   justify-content: none;
   gap: 40px;
-}
-.dashboard .header {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: none;
-}
-.dashboard .header p {
-  text-transform: uppercase;
-  font-weight: 200;
-  letter-spacing: 2px;
-  width: 200px;
-  color: #858585;
-}
-.dashboard .header div {
-  width: 100%;
-}
-.dashboard .header div h3 {
-  font-size: 26px;
-  font-weight: bold;
-}
-.dashboard .header div h5 {
-  font-size: 16px;
-  font-weight: 200;
-  color: #858585;
-}
-.dashboard .header .searchbar {
-  width: 100%;
-  display: flex;
-  flex-direction: none;
-  align-items: center;
-  justify-content: flex-end;
-}
-.dashboard .header .searchbar img {
-  background: #ffffff;
-  border-radius: 25px 0px 0px 25px;
-  padding: 12px;
-  transform: translateX(10px);
-}
-.dashboard .header .searchbar input {
-  border: none;
-  width: 100%;
-  padding: 12px;
-  background: #ffffff;
-  border-radius: 0px 25px 25px 0px;
-  outline: none;
-  font-size: 16px;
-}
-.dashboard .header .searchbar input::placeholder {
-  font-weight: 300;
 }
 .dashboard .cards {
   display: grid;
@@ -137,8 +138,8 @@
 }
 .dashboard .graphic-container .graphic {
   display: grid;
-  grid-template-areas: "payments rows rows";
-  grid-template-columns: 80px auto auto;
+  grid-template-areas: "payments rows";
+  grid-template-columns: 80px auto;
 }
 .dashboard .graphic-container .graphic .payments-col {
   display: flex;
@@ -156,6 +157,9 @@
   justify-content: none;
   grid-area: rows;
   gap: 35px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  padding: 20px;
 }
 .dashboard .graphic-container .graphic .graphic-row td {
   height: 100%;
@@ -220,6 +224,89 @@
   grid-area: profile;
   width: 100%;
   background: #ececf6;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: none;
+  gap: 20px;
+}
+.profile .profile-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 25px;
+}
+.profile .profile-header .profile-pic {
+  border-radius: 50%;
+  width: 40px;
+  cursor: pointer;
+  border: 3px solid #fff;
+}
+.profile .profile-header img {
+  cursor: pointer;
+  width: 20px;
+}
+.profile .header div h3 {
+  width: 100%;
+  font-size: 18px;
+}
+.profile .header div h5 {
+  font-size: 14px;
+}
+.profile .recent-activities {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: none;
+  gap: 20px;
+}
+.profile .upcoming-payments {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: none;
+  gap: 20px;
+}
+.profile .activity-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: none;
+  width: 100%;
+  gap: 10px;
+}
+.profile .activity-container .img-container {
+  display: flex;
+  flex-direction: none;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  background: #fff;
+  border-radius: 15px;
+}
+.profile .activity-container .activity-content {
+  width: 100%;
+}
+.profile .activity-container .activity-content h5 {
+  width: auto;
+  font-size: 16px;
+}
+.profile .activity-container .activity-content p {
+  font-size: 12px;
+  color: #bcbcbc;
+}
+.profile .activity-container .activity-value {
+  width: 100%;
+  display: flex;
+  flex-direction: none;
+  align-items: center;
+  justify-content: flex-end;
+  font-weight: bold;
 }
 
 .blank {

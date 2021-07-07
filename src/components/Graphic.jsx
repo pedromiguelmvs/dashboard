@@ -55,6 +55,21 @@ const Graphic = () => {
                     <div className="black-column"></div>
                     <p>SET</p>
                 </td>
+                <td>
+                    <div className="white-column"></div>
+                    <div className="black-column"></div>
+                    <p>OUT</p>
+                </td>
+                <td>
+                    <div className="white-column"></div>
+                    <div className="black-column"></div>
+                    <p>NOV</p>
+                </td>
+                <td>
+                    <div className="white-column"></div>
+                    <div className="black-column"></div>
+                    <p>DEZ</p>
+                </td>
             </tr>
         </table>
     );
