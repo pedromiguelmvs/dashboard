@@ -3,6 +3,7 @@ import '../styles/css/home.css';
 import Header from '../components/Header';
 import Card from '../components/Card';
 import Graphic from '../components/Graphic';
+import Transition from '../components/Transition';
 
 const Home = () => {
     return (
@@ -60,6 +61,24 @@ const Home = () => {
                     <Header
                         title="History"
                         subtitle="Transection at last 6 months"
+                    />
+                    <Transition
+                        name="Car Insurance"
+                        hour="10:42:23 AM"
+                        value="350,00"
+                        status="Completed"
+                    />
+                    <Transition
+                        name="Laon"
+                        hour="12:42:00 PM"
+                        value="1200,00"
+                        status="Completed"
+                    />
+                    <Transition
+                        name="Online Payment"
+                        hour="10:42:23 AM"
+                        value="154,00"
+                        status="Completed"
                     />
                 </div>
             </section>

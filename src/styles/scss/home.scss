@@ -194,6 +194,41 @@ $header-subtitle-color: #858585;
             }
         }
     }
+
+    .history {
+        @include flex-align(none, center, column);
+        gap: 15px;
+
+        .transition {
+            width: 100%;
+            @include flex-align(center, none, row);
+            transition: .2s;
+            cursor: pointer;
+            padding: 10px;
+
+            img {
+                width: 40px;
+                border-radius: 50%;
+            }
+
+            .content {
+                width: 100%;
+                @include flex-align(center, flex-end, none);
+                gap: 60px;
+
+                p {
+                    font-weight: 200;
+                    // color: #585858;
+                }
+            }
+
+            &:hover {
+                transform: scale(2px);
+                border-radius: 15px;
+                background: #fff;
+            }
+        }
+    }
 }
 
 .profile {
