@@ -13,9 +13,9 @@
 
 .sidebar {
   grid-area: sidebar;
-  width: 100%;
   height: 100vh;
   background: #ececf6;
+  position: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,13 +42,24 @@
   height: auto;
   background: #f5f5fd;
   padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: none;
+  gap: 40px;
 }
 .dashboard .header {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: none;
-  margin-bottom: 60px;
+}
+.dashboard .header p {
+  text-transform: uppercase;
+  font-weight: 200;
+  letter-spacing: 2px;
+  width: 200px;
+  color: #858585;
 }
 .dashboard .header div {
   width: 100%;
@@ -60,6 +71,7 @@
 .dashboard .header div h5 {
   font-size: 16px;
   font-weight: 200;
+  color: #858585;
 }
 .dashboard .header .searchbar {
   width: 100%;
@@ -71,7 +83,7 @@
 .dashboard .header .searchbar img {
   background: #ffffff;
   border-radius: 25px 0px 0px 25px;
-  padding: 10px;
+  padding: 12px;
   transform: translateX(10px);
 }
 .dashboard .header .searchbar input {
@@ -81,6 +93,10 @@
   background: #ffffff;
   border-radius: 0px 25px 25px 0px;
   outline: none;
+  font-size: 16px;
+}
+.dashboard .header .searchbar input::placeholder {
+  font-weight: 300;
 }
 .dashboard .cards {
   display: grid;
@@ -111,6 +127,56 @@
 }
 .dashboard .cards .card:hover {
   transform: translateY(-20px);
+}
+.dashboard .graphic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: none;
+  gap: 40px;
+}
+.dashboard .graphic-container .graphic {
+  display: grid;
+  grid-template-areas: "payments rows rows";
+  grid-template-columns: 80px auto auto;
+}
+.dashboard .graphic-container .graphic .payments-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: none;
+  grid-area: payments;
+  font-weight: 200;
+  gap: 25px;
+}
+.dashboard .graphic-container .graphic .graphic-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: none;
+  grid-area: rows;
+  gap: 35px;
+}
+.dashboard .graphic-container .graphic .graphic-row td {
+  height: 100%;
+  width: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: none;
+  justify-content: center;
+  text-align: center;
+}
+.dashboard .graphic-container .graphic .graphic-row td .white-column {
+  height: 50%;
+  background: #e5e5f1;
+}
+.dashboard .graphic-container .graphic .graphic-row td .black-column {
+  height: 50%;
+  background: #000;
+}
+.dashboard .graphic-container .graphic .graphic-row td p {
+  transform: translateY(10px);
+  font-weight: 200;
 }
 
 .profile {

@@ -6,6 +6,7 @@ $blank-color: #f5f5fd;
 $searchbar-color: #ffffff;
 $card-color: #ffffff;
 $card-subtitle-color: #bcbcbc;
+$header-subtitle-color: #858585;
 
 * {
     margin: 0;
@@ -32,9 +33,9 @@ $card-subtitle-color: #bcbcbc;
 
 .sidebar {
     grid-area: sidebar;
-    width: 100%;
     height: 100vh;
     background: $sidebar-color;
+    position: fixed;
 
     @include flex-align(center, center, column);
 
@@ -59,10 +60,20 @@ $card-subtitle-color: #bcbcbc;
     height: auto;
     background: $dashboard-color;
     padding: 60px;
+    @include flex-align(none, none, column);
+    gap: 40px;
+
 
     .header {
         @include flex-align(center, none, row);
-        margin-bottom: 60px;
+
+        p {
+            text-transform: uppercase;
+            font-weight: 200;
+            letter-spacing: 2px;
+            width: 200px;
+            color: $header-subtitle-color;
+        }
 
         div {
             width: 100%;
@@ -75,6 +86,7 @@ $card-subtitle-color: #bcbcbc;
             h5 {
                 font-size: 16px;
                 font-weight: 200;
+                color: $header-subtitle-color;
             }
         }
         
@@ -85,7 +97,7 @@ $card-subtitle-color: #bcbcbc;
             img {
                 background: $searchbar-color;
                 border-radius: 25px 0px 0px 25px;
-                padding: 10px;
+                padding: 12px;
                 transform: translateX(10px);
             }
             
@@ -96,6 +108,11 @@ $card-subtitle-color: #bcbcbc;
                 background: $searchbar-color;
                 border-radius: 0px 25px 25px 0px;
                 outline: none;
+                font-size: 16px;
+
+                &::placeholder {
+                    font-weight: 300;
+                }
             }
         }
     }
@@ -132,7 +149,51 @@ $card-subtitle-color: #bcbcbc;
         }
     }
 
+    .graphic-container {
+        @include flex-align(none, none, column);
+        gap: 40px;
+        .graphic {
+            display: grid;
+            grid-template-areas: 
+            "payments rows rows";
+            grid-template-columns: 80px auto auto;
 
+            .payments-col {
+                @include flex-align(center, none, column);
+                grid-area: payments;
+                font-weight: 200;
+                gap: 25px;
+            }
+
+            .graphic-row {
+                @include flex-align(center, none, row);
+                grid-area: rows;
+                gap: 35px;
+
+                td {
+                    height: 100%;
+                    width: 40px;
+                    @include flex-align(none, center, column);
+                    text-align: center;
+
+                    .white-column {
+                        height: 50%;
+                        background: #e5e5f1;
+                    }
+
+                    .black-column {
+                        height: 50%;
+                        background: #000;
+                    }
+
+                    p {
+                        transform: translateY(10px);
+                        font-weight: 200;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .profile {

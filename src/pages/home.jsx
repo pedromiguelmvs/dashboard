@@ -2,6 +2,7 @@ import '../styles/css/home.css';
 
 import Header from '../components/Header';
 import Card from '../components/Card';
+import Graphic from '../components/Graphic';
 
 const Home = () => {
     return (
@@ -18,6 +19,7 @@ const Home = () => {
                 <Header
                     title="Dashboard"
                     subtitle="Payments updates"
+                    searchBar={true}
                 />
                 <div className="cards">
                     <Card
@@ -43,6 +45,21 @@ const Home = () => {
                         alt="card"
                         subtitle="Transfer to Other Bank"
                         value="1500"
+                    />
+                </div>
+                <div className="graphic-container">
+                    <Header
+                        title="$1500"
+                        subtitle="Balance"
+                    >
+                        PAST 30 DAYS
+                    </Header>
+                    <Graphic />
+                </div>
+                <div className="history">
+                    <Header
+                        title="History"
+                        subtitle="Transection at last 6 months"
                     />
                 </div>
             </section>
