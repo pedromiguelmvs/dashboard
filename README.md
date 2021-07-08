@@ -1,6 +1,6 @@
 # Dashboard
 
-Este projeto foi elaborado copiando a interface de uma imagem na plataforma Dribbble e refatorando com ReactJS __(create-react-app)__ e o compilador de estilo __Sass__.
+Este projeto foi elaborado copiando a interface de uma imagem na plataforma Dribbble e refatorando com ReactJS __(create-react-app)__ e o compilador de estilo __Sass__. [Demo clicando aqui.](https://dashboard-psi-indol.vercel.app/)
 
 > Disclaimer:
 > This project has no financial purposes and is intended only for learning interfaces using programming tools. All rights reserved to Ghulam Rasool 🚀. [Clicking here](https://dribbble.com/ghulaam-rasool)
