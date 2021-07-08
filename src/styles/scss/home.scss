@@ -29,6 +29,88 @@ $header-subtitle-color: #858585;
     "sidebar dashboard profile blank";
 
     grid-template-columns: 100px auto 300px 50px;
+
+    $big: 1090px;
+    $medium: 940px;
+
+    @media screen and (max-width: $big) {
+        grid-template-areas: 
+        "dashboard profile";
+
+        grid-template-columns: auto 300px;
+
+        .sidebar {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: $medium) {
+        grid-template-areas: 
+        "profile"
+        "dashboard";
+
+        grid-template-columns: auto auto;
+    }
+
+    @media screen and (max-width: 650px) {
+        @include flex-align(none, none, column-reverse);
+
+        .header {
+            @include flex-align(center, none, column);
+            gap: 15px;
+        }
+
+        .dashboard {
+            .history {
+                .transition {
+                    @include flex-align(center, center, column);
+                    gap: 10px;
+
+                    .content {
+                        @include flex-align(center, center, column);
+                        gap: 5px;
+                    }
+                }
+            }
+
+            .graphic-container {
+                display: none;
+            }
+        }
+
+        .profile {
+            .activity-container {
+                width: auto;
+
+                .activity-content {
+                    width: auto;
+                }
+
+                .activity-value {
+                    width: auto;
+                }
+            }
+
+            .profile-header {
+                @include flex-align(center, flex-start, none);
+            }
+        }
+
+        .header {
+            .searchbar {
+                @include flex-align(center, flex-start, none);
+                width: auto;
+            }
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        .dashboard {
+            .cards {
+                @include flex-align(center, none, column);
+            }
+        }
+    }
 }
 
 .sidebar {
@@ -221,7 +303,6 @@ $header-subtitle-color: #858585;
 
                 p {
                     font-weight: 200;
-                    // color: #585858;
                 }
             }
 

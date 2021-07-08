@@ -10,6 +10,83 @@
   grid-template-areas: "sidebar dashboard profile blank";
   grid-template-columns: 100px auto 300px 50px;
 }
+@media screen and (max-width: 1090px) {
+  .grid-container {
+    grid-template-areas: "dashboard profile";
+    grid-template-columns: auto 300px;
+  }
+  .grid-container .sidebar {
+    display: none;
+  }
+}
+@media screen and (max-width: 940px) {
+  .grid-container {
+    grid-template-areas: "profile" "dashboard";
+    grid-template-columns: auto auto;
+  }
+}
+@media screen and (max-width: 650px) {
+  .grid-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: none;
+    justify-content: none;
+  }
+  .grid-container .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: none;
+    gap: 15px;
+  }
+  .grid-container .dashboard .history .transition {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .grid-container .dashboard .history .transition .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+  .grid-container .dashboard .graphic-container {
+    display: none;
+  }
+  .grid-container .profile .activity-container {
+    width: auto;
+  }
+  .grid-container .profile .activity-container .activity-content {
+    width: auto;
+  }
+  .grid-container .profile .activity-container .activity-value {
+    width: auto;
+  }
+  .grid-container .profile .profile-header {
+    display: flex;
+    flex-direction: none;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .grid-container .header .searchbar {
+    display: flex;
+    flex-direction: none;
+    align-items: center;
+    justify-content: flex-start;
+    width: auto;
+  }
+}
+@media screen and (max-width: 500px) {
+  .grid-container .dashboard .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: none;
+  }
+}
 
 .sidebar {
   grid-area: sidebar;
